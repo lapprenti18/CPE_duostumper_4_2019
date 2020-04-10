@@ -6,7 +6,10 @@
 ##
 
 SRC	=	src/main.c	\
-		src/my_str_to_word_array.c
+		src/my_str_to_word_array.c	\
+		src/open_file.c	\
+		src/str_len_cmp.c	\
+		src/tab.c	\
 
 NAME	=	mixword
 
