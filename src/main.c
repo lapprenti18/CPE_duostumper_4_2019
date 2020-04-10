@@ -32,7 +32,9 @@ void print_all(char **tab, int word_enter, char **tab_db)
         err = printf("%s\n", tab[temp]);
         if (err == -1)
             exit (84);
+        free(tab[temp]);
     }
+    free(tab);
 }
 
 void word_in_tab(char **tab, char **tab_db)
