@@ -1,0 +1,30 @@
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+int my_putstr(char const *str);
+ 
+void display_map(char const *filepath)
+{
+    int fdIn;
+    int nbRead;
+    char buffer[30000];
+ 
+  //Etape1 = Ouverture du fichier source
+    fdIn = open(filepath, O_RDONLY, 0666);
+ 
+    if (fdIn == -1) {
+        my_putstr("Error opening file\n");
+        exit(EXIT_FAILURE);
+    }
+
+    //Etape2 = On utilise read pour envoyer le contenu du fichier1 vers le buffer
+    nbRead = read(fdIn, buffer, sizeof(buffer));
+    while (nbRead > 0) {
+        write(1, buffer, nbRead);
+        nbRead = read(fdIn, buffer, sizeof(buffer));
+    }
+
+        close(fdIn);
+}
+
