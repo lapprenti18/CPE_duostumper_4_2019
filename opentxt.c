@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+
 int my_putstr(char const *str);
  
 void openfile(char const *filepath)
@@ -15,6 +16,7 @@ void openfile(char const *filepath)
     if (fdIn == -1) {
         my_putstr("Error opening file\n");
         exit(EXIT_FAILURE);
+            return(84);
     }
 
     nbRead = read(fdIn, buffer, sizeof(buffer));
