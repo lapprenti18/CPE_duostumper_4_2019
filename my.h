@@ -12,3 +12,5 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <errno.h>
+
+char **my_str_to_word_array(char *str);

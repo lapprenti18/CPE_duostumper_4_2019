@@ -6,6 +6,7 @@
 ##
 
 SRC	=	src/main.c	\
+		src/my_str_to_word_array.c
 
 NAME	=	mixword
 
