@@ -13,11 +13,14 @@ VG	=	-g3
 
 ERROR	=	-Wall -W -Wextra
 
-all	:
-	gcc -o $(NAME) $(SRC) $(ERROR)
+OBJ	= $(SRC:.c.o)
+
+all	: $(NAME)
+$(NAME):	$(OBJ)
+	gcc $(ERROR) $(VG) $(SRC) -o -$(NAME)
 
 clean	:
-	rm -f *.o $(OBJ)
+	rm -f $(OBJ)
 
 fclean	: clean
 	rm -f $(NAME)
