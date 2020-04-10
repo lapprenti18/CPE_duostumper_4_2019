@@ -15,14 +15,17 @@ ERROR	=	-Wall -W -Wextra
 
 OBJ	= $(SRC:.c.o)
 
+CC =	gcc
+
 all	: $(NAME)
+
 $(NAME):	$(OBJ)
-	gcc $(ERROR) $(VG) $(SRC) -o -$(NAME)
+	$(CC) $(ERROR) $(VG) $(SRC) -o $(NAME)
 
 clean	:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean	: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re	: fclean all
